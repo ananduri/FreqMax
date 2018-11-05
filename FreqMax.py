@@ -145,3 +145,17 @@ class FreqMax:
             
         return g(k, self.dblist)
         
+    def getmaxgrouped(self, k=1):
+        node, count = self.dblist, k
+        keys = []
+        while count > 0 and node is not None:
+            currkeys = []
+            currkeys.append(node.datum.key)
+            while node.next is not None and node.next.datum.value == node.datum.value:
+                node = node.next
+                currkeys.append(node.datum.key)
+            keys.append(currkeys)
+            node = node.next
+            count -= 1
+        
+        return keys
