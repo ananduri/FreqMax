@@ -84,6 +84,7 @@ class FreqMax:
             # if linked list is now out of order,
             # splice node to the closest location
             # that restores order
+
             if node.prev is None or node.datum.value < node.prev.datum.value:
                 self.gaps[node.datum.value] = node
                 return
@@ -119,7 +120,7 @@ class FreqMax:
                 node.prev = new_parent
                 new_parent.next = node
             
-            self.gaps[target_value] = node                
+            self.gaps[node.datum.value] = node                
         else:
             # add new node to tail of linked list
             node = DblNode(KeyValue(key, 1))
@@ -145,7 +146,7 @@ class FreqMax:
         keys = []
         node, count = self.dblist, k
         while count > 0 and node is not None:
-            keys.append(node.datum.key))
+            keys.append(node.datum.key)
             node = node.next
             count -= 1
         while node is not None and node.next.datum.value == node.datum.value:
