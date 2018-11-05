@@ -142,15 +142,6 @@ class FreqMax:
             # check for tied keys that were not included
             while node is not None and node.next.datum.value == node.datum.value:
                 yield node.datum.key
-        
-        keys = []
-        node, count = self.dblist, k
-        while count > 0 and node is not None:
-            keys.append(node.datum.key)
-            node = node.next
-            count -= 1
-        while node is not None and node.next.datum.value == node.datum.value:
-            keys.append(node.datum.key)
             
         return g(k, self.dblist)
         
