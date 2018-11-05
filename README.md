@@ -4,7 +4,7 @@ Data structure used to track most frequently occuring keys in a list of keys.
 
 Supports reading a list of length N in O(N) time, and returning the k most frequently occurring elements in O(k) time.
 
-This data structure offers superior time complexity to the more standard solution of using a max-heap to track the most commonly occurring elements, by getting rid of the log N factor.
+This data structure offers superior time complexity to the standard solution of using a max-heap to track the most commonly occurring elements, by getting rid of the log N factor.
 
 ## Usage
 
